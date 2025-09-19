@@ -1,0 +1,80 @@
+PAPER RETRIEVAL ANALYSIS REPORT
+==================================================
+Topic: graph neural networks
+Generated: 2025-09-17 17:31:28
+Total Papers Retrieved: 5
+
+SOURCE BREAKDOWN:
+--------------------
+Semantic Scholar: 5 papers (100.0%)
+
+PUBLICATION YEARS:
+--------------------
+Average Year: 2020.2
+Latest Paper: 2023
+Oldest Paper: 2018
+
+CITATION ANALYSIS:
+--------------------
+Total Citations: 20726
+Papers with Citations: 5/5
+Average Citations (cited papers): 4145.2
+
+PDF AVAILABILITY:
+--------------------
+Papers with PDF: 2/5 (40.0%)
+
+==================================================
+DETAILED PAPER LIST:
+==================================================
+
+1. A Comprehensive Survey on Graph Neural Networks
+   Authors: Zonghan Wu, Shirui Pan, Fengwen Chen...
+   Source: Semantic Scholar
+   Year: 2019
+   Citations: 9016
+   PDF Available: Yes
+   Venue: IEEE Transactions on Neural Networks and Learning Systems
+   Abstract: Deep learning has revolutionized many machine learning tasks in recent years, ranging from image classification and video processing to speech recognition and natural language understanding. The data ...
+   Paper ID: 81a4fd3004df0eb05d6c1cef96ad33d5407820df
+--------------------------------------------------
+2. How Powerful are Graph Neural Networks?
+   Authors: Keyulu Xu, Weihua Hu, J. Leskovec...
+   Source: Semantic Scholar
+   Year: 2018
+   Citations: 8053
+   PDF Available: No
+   Venue: International Conference on Learning Representations
+   Abstract: Graph Neural Networks (GNNs) are an effective framework for representation learning of graphs. GNNs follow a neighborhood aggregation scheme, where the representation vector of a node is computed by r...
+   Paper ID: 62ed9bf1d83c8db1f9cbf92ea2f57ea90ef683d9
+--------------------------------------------------
+3. Benchmarking Graph Neural Networks
+   Authors: Vijay Prakash Dwivedi, Chaitanya K. Joshi, T. Laurent...
+   Source: Semantic Scholar
+   Year: 2023
+   Citations: 1006
+   PDF Available: No
+   Venue: Journal of machine learning research
+   Abstract: Graph neural networks (GNNs) have become the standard toolkit for analyzing and learning from data on graphs. As the field grows, it becomes critical to identify key architectures and validate new ide...
+   Paper ID: d08a0eb7024dff5c4fabd58144a38031633d4e1a
+--------------------------------------------------
+4. E(n) Equivariant Graph Neural Networks
+   Authors: Victor Garcia Satorras, Emiel Hoogeboom, M. Welling
+   Source: Semantic Scholar
+   Year: 2021
+   Citations: 1108
+   PDF Available: No
+   Venue: International Conference on Machine Learning
+   Abstract: This paper introduces a new model to learn graph neural networks equivariant to rotations, translations, reflections and permutations called E(n)-Equivariant Graph Neural Networks (EGNNs). In contrast...
+   Paper ID: 8ea9cb53779a8c1bb0e53764f88669bd7edf38f0
+--------------------------------------------------
+5. Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks
+   Authors: Zonghan Wu, Shirui Pan, Guodong Long...
+   Source: Semantic Scholar
+   Year: 2020
+   Citations: 1543
+   PDF Available: Yes
+   Venue: Knowledge Discovery and Data Mining
+   Abstract: Modeling multivariate time series has long been a subject that has attracted researchers from a diverse range of fields including economics, finance, and traffic. A basic assumption behind multivariat...
+   Paper ID: 75e924bd79d27a23f3f93d9b1ab62a779505c8d2
+--------------------------------------------------

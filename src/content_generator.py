@@ -98,7 +98,9 @@ class ContentGenerator:
         - Base all technical content on the provided research papers, not generic formulations
         - Use technical terminology and precise mathematical notation from the source papers
         - Total target: ~1150 words (much more concise)
-        - NO citations yet (will be added automatically later)
+        - ABSOLUTELY NO CITATIONS IN YOUR OUTPUT - DO NOT INCLUDE (Author, Year) FORMAT
+        - DO NOT WRITE (Smith et al., 2023) OR ANY CITATION FORMAT
+        - Citations will be added automatically later by our system
         - Write as original technical research, not survey/review
         - Focus on specific algorithms, models, and methods from the source papers
         - Include complexity analysis and performance bounds from the actual papers
@@ -451,12 +453,75 @@ class ContentGenerator:
         return list(set(citations))  # Remove duplicates
     
     def _summarize_papers(self, processed_papers: List) -> str:
-        """Create a summary of available papers for outline generation"""
-        summaries = []
-        for paper in processed_papers[:10]:  # Limit to top 10 papers
-            summary = f"- {paper.title}: {paper.abstract[:150]}..."
-            summaries.append(summary)
-        return "\n".join(summaries)
+        """Create comprehensive hierarchical summary of available papers"""
+        content_parts = []
+        
+        # 1. Overview of all papers (complete abstracts)
+        content_parts.append("=== AVAILABLE RESEARCH PAPERS ===")
+        for i, paper in enumerate(processed_papers[:8], 1):  # Top 8 papers
+            overview = f"\n{i}. **{paper.title}**"
+            overview += f"\n   Authors: {', '.join(paper.authors[:4]) if paper.authors else 'Unknown'}"
+            overview += f"\n   Abstract: {paper.abstract}"  # FULL abstract, not truncated
+            content_parts.append(overview)
+        
+        # 2. Detailed technical content from top 4 papers
+        content_parts.append("\n\n=== DETAILED TECHNICAL CONTENT ===")
+        for i, paper in enumerate(processed_papers[:4], 1):
+            detailed = f"\n--- PAPER {i}: {paper.title} ---"
+            
+            # Include key sections with substantial content
+            sections_added = 0
+            for section_name, content in paper.sections.items():
+                if sections_added >= 3:  # Limit to 3 sections per paper
+                    break
+                    
+                # Focus on technical sections
+                if any(key in section_name.lower() for key in 
+                      ['introduction', 'method', 'approach', 'model', 'algorithm', 'result', 'experiment', 'conclusion']):
+                    
+                    # Extract first substantial paragraph (not just sentences)
+                    paragraphs = content.split('\n\n')
+                    substantial_content = ""
+                    
+                    for paragraph in paragraphs:
+                        if len(paragraph.strip()) > 100:  # Skip short paragraphs
+                            substantial_content = paragraph[:800]  # First 800 chars of substantial content
+                            break
+                    
+                    if substantial_content:
+                        detailed += f"\n\n{section_name.title()}:\n{substantial_content}..."
+                        sections_added += 1
+            
+            content_parts.append(detailed)
+        
+        # 3. Mathematical and algorithmic highlights
+        math_highlights = self._extract_mathematical_highlights(processed_papers[:6])
+        if math_highlights:
+            content_parts.append(f"\n\n=== KEY MATHEMATICAL CONCEPTS ===\n{math_highlights}")
+        
+        return '\n'.join(content_parts)
+    
+    def _extract_mathematical_highlights(self, processed_papers: List) -> str:
+        """Extract mathematical formulations and algorithms from papers"""
+        highlights = []
+        
+        for paper in processed_papers:
+            # Look for mathematical content in sections
+            for section_name, content in paper.sections.items():
+                # Find sentences with mathematical indicators
+                sentences = content.split('. ')
+                for sentence in sentences:
+                    if any(indicator in sentence.lower() for indicator in 
+                          ['equation', 'formula', 'algorithm', 'optimization', 'minimize', 'maximize', 
+                           'convergence', 'complexity', 'theorem', 'proof', 'gradient', 'loss function']):
+                        if len(sentence) > 50 and len(sentence) < 300:  # Reasonable length
+                            highlights.append(f"- {sentence.strip()}.")
+                            if len(highlights) >= 8:  # Limit total highlights
+                                break
+                if len(highlights) >= 8:
+                    break
+        
+        return '\n'.join(highlights[:8]) if highlights else ""
     
     def _parse_outline_response(self, response: str) -> Dict:
         """Parse the JSON response from outline generation"""

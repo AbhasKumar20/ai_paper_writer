@@ -173,12 +173,22 @@ class ResearchPaperGenerator:
         # This ensures we have a references section even if citation matching fails
         for paper in processed_papers:
             # Extract year from published_date (e.g., "2024-03-15" -> "2024")
-            year = "2023"  # Default fallback
+            year = "Unknown"  # Default fallback (changed from 2023)
             if hasattr(paper, 'published_date') and paper.published_date:
                 try:
-                    year = paper.published_date.split('-')[0]
-                except:
-                    year = "2023"
+                    # Handle different date formats:
+                    # "2024-03-15" -> "2024" (arXiv format)  
+                    # "2024" -> "2024" (Semantic Scholar format)
+                    if '-' in paper.published_date:
+                        year = paper.published_date.split('-')[0]
+                    else:
+                        year = str(paper.published_date)
+                    # Validate year is reasonable
+                    year_int = int(year)
+                    if year_int < 1900 or year_int > 2030:
+                        year = "Unknown"
+                except (ValueError, IndexError, AttributeError):
+                    year = "Unknown"
             
             citation_details[paper.paper_id] = {
                 'title': paper.title,

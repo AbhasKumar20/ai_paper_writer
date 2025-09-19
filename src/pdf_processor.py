@@ -28,6 +28,7 @@ class ProcessedPaper:
     full_text: str
     references: List[str]
     sentences: List[Dict]  # List of sentences with metadata
+    published_date: str  # Added: Publication date from original paper
     pdf_path: Optional[str] = None
 
 class PDFProcessor:
@@ -71,6 +72,7 @@ class PDFProcessor:
                 full_text=content['full_text'],
                 references=content.get('references', []),
                 sentences=sentences,
+                published_date=paper.published_date,  # Copy publication date from original paper
                 pdf_path=pdf_path
             )
             

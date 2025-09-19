@@ -1,0 +1,101 @@
+{
+  "topic": "graph neural networks",
+  "timestamp": "2025-09-17T17:31:28.058925",
+  "total_papers": 5,
+  "papers": [
+    {
+      "rank": 1,
+      "title": "A Comprehensive Survey on Graph Neural Networks",
+      "authors": [
+        "Zonghan Wu",
+        "Shirui Pan",
+        "Fengwen Chen",
+        "Guodong Long",
+        "Chengqi Zhang",
+        "Philip S. Yu"
+      ],
+      "abstract": "Deep learning has revolutionized many machine learning tasks in recent years, ranging from image classification and video processing to speech recognition and natural language understanding. The data in these tasks are typically represented in the Euclidean space. However, there is an increasing number of applications, where data are generated from non-Euclidean domains and are represented as graphs with complex relationships and interdependency between objects. The complexity of graph data has ...",
+      "source": "semantic_scholar",
+      "published_date": "2019",
+      "citation_count": 9016,
+      "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+      "pdf_url": "https://doi.org/10.1109/tnnls.2020.2978386",
+      "paper_id": "81a4fd3004df0eb05d6c1cef96ad33d5407820df",
+      "has_pdf": true
+    },
+    {
+      "rank": 2,
+      "title": "How Powerful are Graph Neural Networks?",
+      "authors": [
+        "Keyulu Xu",
+        "Weihua Hu",
+        "J. Leskovec",
+        "S. Jegelka"
+      ],
+      "abstract": "Graph Neural Networks (GNNs) are an effective framework for representation learning of graphs. GNNs follow a neighborhood aggregation scheme, where the representation vector of a node is computed by recursively aggregating and transforming representation vectors of its neighboring nodes. Many GNN variants have been proposed and have achieved state-of-the-art results on both node and graph classification tasks. However, despite GNNs revolutionizing graph representation learning, there is limited ...",
+      "source": "semantic_scholar",
+      "published_date": "2018",
+      "citation_count": 8053,
+      "venue": "International Conference on Learning Representations",
+      "pdf_url": "",
+      "paper_id": "62ed9bf1d83c8db1f9cbf92ea2f57ea90ef683d9",
+      "has_pdf": false
+    },
+    {
+      "rank": 3,
+      "title": "Benchmarking Graph Neural Networks",
+      "authors": [
+        "Vijay Prakash Dwivedi",
+        "Chaitanya K. Joshi",
+        "T. Laurent",
+        "Yoshua Bengio",
+        "X. Bresson"
+      ],
+      "abstract": "Graph neural networks (GNNs) have become the standard toolkit for analyzing and learning from data on graphs. As the field grows, it becomes critical to identify key architectures and validate new ideas that generalize to larger, more complex datasets. Unfortunately, it has been increasingly difficult to gauge the effectiveness of new models in the absence of a standardized benchmark with consistent experimental settings. In this paper, we introduce a reproducible GNN benchmarking framework, wit...",
+      "source": "semantic_scholar",
+      "published_date": "2023",
+      "citation_count": 1006,
+      "venue": "Journal of machine learning research",
+      "pdf_url": "",
+      "paper_id": "d08a0eb7024dff5c4fabd58144a38031633d4e1a",
+      "has_pdf": false
+    },
+    {
+      "rank": 4,
+      "title": "E(n) Equivariant Graph Neural Networks",
+      "authors": [
+        "Victor Garcia Satorras",
+        "Emiel Hoogeboom",
+        "M. Welling"
+      ],
+      "abstract": "This paper introduces a new model to learn graph neural networks equivariant to rotations, translations, reflections and permutations called E(n)-Equivariant Graph Neural Networks (EGNNs). In contrast with existing methods, our work does not require computationally expensive higher-order representations in intermediate layers while it still achieves competitive or better performance. In addition, whereas existing methods are limited to equivariance on 3 dimensional spaces, our model is easily sc...",
+      "source": "semantic_scholar",
+      "published_date": "2021",
+      "citation_count": 1108,
+      "venue": "International Conference on Machine Learning",
+      "pdf_url": "",
+      "paper_id": "8ea9cb53779a8c1bb0e53764f88669bd7edf38f0",
+      "has_pdf": false
+    },
+    {
+      "rank": 5,
+      "title": "Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks",
+      "authors": [
+        "Zonghan Wu",
+        "Shirui Pan",
+        "Guodong Long",
+        "Jing Jiang",
+        "Xiaojun Chang",
+        "Chengqi Zhang"
+      ],
+      "abstract": "Modeling multivariate time series has long been a subject that has attracted researchers from a diverse range of fields including economics, finance, and traffic. A basic assumption behind multivariate time series forecasting is that its variables depend on one another but, upon looking closely, it is fair to say that existing methods fail to fully exploit latent spatial dependencies between pairs of variables. In recent years, meanwhile, graph neural networks (GNNs) have shown high capability i...",
+      "source": "semantic_scholar",
+      "published_date": "2020",
+      "citation_count": 1543,
+      "venue": "Knowledge Discovery and Data Mining",
+      "pdf_url": "https://research-repository.griffith.edu.au/bitstreams/45e89825-c592-4b81-b421-f7327e69331e/download",
+      "paper_id": "75e924bd79d27a23f3f93d9b1ab62a779505c8d2",
+      "has_pdf": true
+    }
+  ]
+}
